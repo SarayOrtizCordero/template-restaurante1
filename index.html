@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="El Fogón Porteño – Auténtica cocina argentina en Buenos Aires. Los mejores cortes, pastas caseras y vinos de Mendoza. Reservá tu mesa.">
+    <meta name="keywords" content="restaurante argentino, fogón porteño, parrilla, asado, bife de chorizo, Buenos Aires, reservas">
+    <meta property="og:title" content="El Fogón Porteño – Restaurante Argentino">
+    <meta property="og:description" content="Auténtica cocina argentina desde 1985. Reservá tu mesa hoy.">
+    <meta property="og:type" content="restaurant">
+    <title>El Fogón Porteño – Restaurante Argentino</title>
+
+    <!-- Preload imagen hero (LCP crítico) -->
+    <link rel="preload" as="image"
+          href="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80"
+          fetchpriority="high">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- SEO Estructurado -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "El Fogón Porteño",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Corrientes 1234",
+            "addressLocality": "Buenos Aires",
+            "addressCountry": "AR"
+        },
+        "telephone": "+54-11-1234-5678",
+        "openingHours": ["Mo-Fr 12:00-24:00", "Sa 12:00-01:00", "Su 12:00-23:00"],
+        "servesCuisine": "Argentine",
+        "priceRange": "$$"
+    }
+    </script>
+</head>
+<body data-phone="5491112345678" data-phone-display="+54 11 1234-5678">
+
+    <!-- Botón flotante WhatsApp -->
+    <a href="https://wa.me/5491112345678?text=Hola!%20Quiero%20hacer%20una%20reserva"
+       class="whatsapp-btn" target="_blank" rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <!-- Overlay para menú móvil -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#inicio" class="nav__logo">
+                <i class="fas fa-fire nav__logo-icon" aria-hidden="true"></i>
+                <span>El Fogón <em>Porteño</em></span>
+            </a>
+
+            <ul class="nav__list" id="nav-list">
+                <li><a href="#inicio"      class="nav__link">Inicio</a></li>
+                <li><a href="#nosotros"    class="nav__link">Nosotros</a></li>
+                <li><a href="#menu"        class="nav__link">Menú</a></li>
+                <li><a href="#galeria"     class="nav__link">Galería</a></li>
+                <li><a href="#ubicacion"   class="nav__link">Ubicación</a></li>
+                <li><a href="#testimonios" class="nav__link">Reseñas</a></li>
+            </ul>
+
+            <a href="#reservas" class="btn btn--primary nav__cta">Reservá tu Mesa</a>
+
+            <button type="button" class="hamburger" id="hamburger"
+                    aria-label="Abrir menú" aria-expanded="false">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="inicio">
+            <div class="hero__overlay"></div>
+            <div class="hero__content container">
+                <p class="hero__tag fade-in">Auténtica cocina argentina</p>
+                <h1 class="hero__title fade-in">El sabor que<br><em>te conquista</em></h1>
+                <p class="hero__text fade-in">Desde 1985, los mejores cortes de las pampas argentinas,<br>preparados con fuego, pasión y tradición.</p>
+                <div class="hero__btns fade-in">
+                    <a href="#menu" class="btn btn--primary">Ver Menú</a>
+                    <a href="#reservas" class="btn btn--outline">Hacé tu Reserva</a>
+                </div>
+            </div>
+            <a href="#nosotros" class="hero__scroll" aria-label="Siguiente sección">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </a>
+        </section>
+
+
+        <!-- ===== ASADO CALLOUT ===== -->
+        <div class="asado-callout" aria-label="El ritual del asado argentino">
+            <div class="container">
+                <div class="asado-callout__inner">
+                    <div class="asado-callout__icon">
+                        <i class="fas fa-fire" aria-hidden="true"></i>
+                    </div>
+                    <div class="asado-callout__body">
+                        <h3 class="asado-callout__title">El ritual del asado argentino</h3>
+                        <p class="asado-callout__text">Más que una comida, el asado es un acontecimiento social. Desde hace más de 200 años, el fuego reúne familias y amigos alrededor de la parrilla en una tradición que define la identidad argentina.</p>
+                    </div>
+                    <div class="asado-callout__badge">
+                        <i class="fas fa-award" aria-hidden="true"></i>
+                        <span>Tradición</span>
+                        <strong>Argentina</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Separador tablero -->
+        <div class="tablero-divider" aria-hidden="true"></div>
+
+        <!-- ===== NOSOTROS ===== -->
+        <section class="about" id="nosotros">
+            <div class="container">
+                <div class="about__grid">
+                    <div class="about__images reveal-left">
+                        <div class="about__img-main">
+                            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80"
+                                 alt="Interior del restaurante" loading="lazy">
+                        </div>
+                        <div class="about__img-secondary">
+                            <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=350&q=80"
+                                 alt="Nuestro chef" loading="lazy">
+                        </div>
+                        <div class="about__badge">
+                            <span>Desde</span>
+                            <strong>1985</strong>
+                        </div>
+                    </div>
+                    <div class="about__content reveal">
+                        <span class="section__tag">Nuestra Historia</span>
+                        <h2 class="section__title">Pasión argentina en<br><em>cada bocado</em></h2>
+                        <p>Nacimos en el corazón de Buenos Aires con una misión clara: traer a la mesa los sabores más auténticos de la cocina argentina. Desde el primer día, seleccionamos los mejores cortes de carne de las pampas.</p>
+                        <p>Nuestro chef, con más de 25 años de experiencia, fusiona técnicas tradicionales con toques modernos para crear experiencias culinarias únicas que celebran la rica tradición argentina.</p>
+                        <div class="about__features">
+                            <div class="about__feature"><i class="fas fa-fire" aria-hidden="true"></i><span>Parrilla a leña tradicional</span></div>
+                            <div class="about__feature"><i class="fas fa-leaf" aria-hidden="true"></i><span>Ingredientes frescos diarios</span></div>
+                            <div class="about__feature"><i class="fas fa-award" aria-hidden="true"></i><span>Premio Mejor Restaurante 2023</span></div>
+                            <div class="about__feature"><i class="fas fa-wine-glass-alt" aria-hidden="true"></i><span>Sommelier certificado</span></div>
+                        </div>
+                        <a href="#reservas" class="btn btn--primary">Reservá una Mesa</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== MENÚ ===== -->
+        <section class="menu" id="menu">
+            <div class="container">
+                <div class="section__header reveal">
+                    <span class="section__tag">Lo Mejor de la Casa</span>
+                    <h2 class="section__title">Nuestro <em>Menú</em></h2>
+                    <p class="section__subtitle">Platos elaborados con los mejores ingredientes de la gastronomía argentina</p>
+                    <span class="section__currency-note">Precios expresados en pesos argentinos (ARS)</span>
+                </div>
+
+                <div class="menu__tabs reveal">
+                    <button type="button" class="menu__tab active" data-category="entradas"><i class="fas fa-utensils" aria-hidden="true"></i> Entradas</button>
+                    <button type="button" class="menu__tab" data-category="parrilla"><i class="fas fa-fire" aria-hidden="true"></i> Parrilla</button>
+                    <button type="button" class="menu__tab" data-category="pastas"><i class="fas fa-bread-slice" aria-hidden="true"></i> Pastas</button>
+                    <button type="button" class="menu__tab" data-category="postres"><i class="fas fa-ice-cream" aria-hidden="true"></i> Postres</button>
+                    <button type="button" class="menu__tab" data-category="bebidas"><i class="fas fa-wine-glass" aria-hidden="true"></i> Bebidas</button>
+                </div>
+
+                <div class="menu__grid" id="menu-grid">
+
+                    <!-- ENTRADAS -->
+                    <div class="menu__card reveal" data-category="entradas">
+                        <div class="menu__card-img">
+                            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&q=80" alt="Empanadas criollas" loading="lazy">
+                            <span class="menu__badge">Popular</span>
+                        </div>
+                        <div class="menu__card-body">
+                            <h3>Empanadas Criollas</h3>
+                            <p>Carne, cebolla, huevo y aceituna. Docena fritas o al horno.</p>
+                            <div class="menu__card-footer">
+                                <span class="menu__price">$ 4.200</span>
+                                <a href="https://wa.me/5491112345678?text=Quiero%20pedir%20Empanadas%20Criollas" class="btn btn--sm btn--outline-dark" target="_blank" rel="noopener noreferrer">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__card reveal" data-category="entradas">
+                        <div class="menu__card-img">
+                            <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=400&q=80" alt="Provoleta a la parrilla" loading="lazy">
+                        </div>
+                        <div class="menu__card-body">
+                            <h3>Provoleta a la Parrilla</h3>
+                            <p>Queso provolone grillado con orégano, aceite de oliva y chimichurri.</p>
+                            <div class="menu__card-footer">
+                                <span class="menu__price">$ 3.800</span>
+                                <a href="https://wa.me/5491112345678?text=Quiero%20pedir%20Provoleta" class="btn btn--sm btn--outline-dark" target="_blank" rel="noopener noreferrer">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__card reveal" data-category="entradas">
+                        <div class="menu__card-img">
+                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80" alt="Tabla de embutidos" loading="lazy">
+                        </div>
+                        <div class="menu__card-body">
+                            <h3>Tabla de Embutidos</h3>
+                            <p>Selección de salames, chorizos y morcilla con pan artesanal y mostaza.</p>
+                            <div class="menu__card-footer">
+                                <span class="menu__price">$ 5.500</span>
+                                <a href="https://wa.me/5491112345678?text=Quiero%20pedir%20Tabla%20de%20Embutidos" class="btn btn--sm btn--outline-dark" target="_blank" rel="noopener noreferrer">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PARRILLA -->
+                    <div class="menu__card reveal" data-category="parrilla">
+                        <div class="menu__card-img">
+                            <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=400&q=80" alt="Bife de chorizo" loading="lazy">
+                            <span class="menu__badge">Estrella</span>
+                        </div>
+                        <div class="menu__card-body">
+                            <h3>Bife de Chorizo</h3>
+                            <p>400g madurado, cocinado a la leña. Con papas fritas y ensalada.</p>
+                            <div class="menu__card-footer">
+                                <span class="menu__price">$ 12.500</span>
+                                <a href="https://wa.me/5491112345678?text=Quiero%20pedir%20Bife%20de%20Chorizo" class="btn btn--sm btn--outline-dark" target="_blank" rel="noopener noreferrer">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__card reveal" data-category="parrilla">
+                        <div class="menu__card-img">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80" alt="Asado de tira" loading="lazy">
+                        </div>
+                        <div class="menu__card-body">
+                            <h3>Asado de Tira</h3>
+                            <p>Tira de asado (500g), cocción lenta a la parrilla con chimichurri casero.</p>
+                            <div class="menu__card-footer">
+                                <span class="menu__price">$ 11.200</span>
+                                <a href="https://wa.me/5491112345678?text=Quiero%20pedir%20Asado%20de%20Tira" class="btn btn--sm btn--outline-dark" target="_blank" rel="noopener noreferrer">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__card reveal" data-category="parrilla">
+                        <div class="menu__card-img">
+                            <img src="https://images.unsplash.com/photo-1529694157872-4e0c0f3b238b?w=400&q=80" alt="Vacío a la parrilla" loading="lazy">
+                        </div>
+                        <div class="menu__card-body">
+                            <h3>Vacío a la Parrilla</h3>
+                            <p>Corte especial argentino (450g) con ensalada mixta y papas al rescoldo.</p>
+                            <div class="menu__card-footer">
+                                <span class="menu__price">$ 10.800</span>
+                                <a href="https://wa.me/5491112345678?text=Quiero%20pedir%20Vacio" class="btn btn--sm btn--outline-dark" target="_blank" rel="noopener noreferrer">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PASTAS -->
+                    <div class="menu__card reveal" data-category="pastas">
+                        <div class="menu__card-img">
+                            <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=400&q=80" alt="Tallarines al fileto" loading="lazy">
+                        </div>
+                        <div class="menu__card-body">
+                            <h3>Tallarines al Fileto</h3>
+                            <p>Pasta fresca artesanal con salsa de tomate, albahaca fresca y ajo.</p>
+                            <div class="menu__card-footer">
+                                <span class="menu__price">$ 6.200</span>
+                                <a href="https://wa.me/5491112345678?text=Quiero%20pedir%20Tallarines" class="btn btn--sm btn--outline-dark" target="_blank" rel="noopener noreferrer">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__card reveal" data-category="pastas">
+                        <div class="menu__card-img">
+                            <img src="https://images.unsplash.com/photo-1587740908075-9e245070dfaa?w=400&q=80" alt="Ravioles de ricota" loading="lazy">
+                        </div>
+                        <div class="menu__card-body">
+                            <h3>Ravioles de Ricota</h3>
+                            <p>Rellenos con ricota y espinaca, salsa de manteca con salvia.</p>
+                            <div class="menu__card-footer">
+                                <span class="menu__price">$ 7.800</span>
+                                <a href="https://wa.me/5491112345678?text=Quiero%20pedir%20Ravioles" class="btn btn--sm btn--outline-dark" target="_blank" rel="noopener noreferrer">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__card reveal" data-category="pastas">
+                        <div class="menu__card-img">
+                            <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?w=400&q=80" alt="Ñoquis del 29" loading="lazy">
+                            <span class="menu__badge">Clásico</span>
+                        </div>
+                        <div class="menu__card-body">
+                            <h3>Ñoquis del 29</h3>
+                            <p>Ñoquis de papa caseros, salsa a elección: fileto, bolognesa o crema.</p>
+                            <div class="menu__card-footer">
+                                <span class="menu__price">$ 5.900</span>
+                                <a href="https://wa.me/5491112345678?text=Quiero%20pedir%20Ñoquis" class="btn btn--sm btn--outline-dark" target="_blank" rel="noopener noreferrer">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- POSTRES -->
+                    <div class="menu__card reveal" data-category="postres">
+                        <div class="menu__card-img">
+                            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&q=80" alt="Flan casero" loading="lazy">
+                            <span class="menu__badge">Clásico</span>
+                        </div>
+                        <div class="menu__card-body">
+                            <h3>Flan Casero</h3>
+                            <p>Flan de huevo con dulce de leche y crema chantilly. Receta de la abuela.</p>
+                            <div class="menu__card-footer">
+                                <span class="menu__price">$ 2.800</span>
+                                <a href="https://wa.me/5491112345678?text=Quiero%20pedir%20Flan" class="btn btn--sm btn--outline-dark" target="_blank" rel="noopener noreferrer">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__card reveal" data-category="postres">
+                        <div class="menu__card-img">
+                            <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400&q=80" alt="Panqueques con dulce de leche" loading="lazy">
+                        </div>
+                        <div class="menu__card-body">
+                            <h3>Panqueques con DDL</h3>
+                            <p>Panqueques caseros con dulce de leche y helado de crema americana.</p>
+                            <div class="menu__card-footer">
+                                <span class="menu__price">$ 3.200</span>
+                                <a href="https://wa.me/5491112345678?text=Quiero%20pedir%20Panqueques" class="btn btn--sm btn--outline-dark" target="_blank" rel="noopener noreferrer">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__card reveal" data-category="postres">
+                        <div class="menu__card-img">
+                            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&q=80" alt="Alfajor de maicena" loading="lazy">
+                        </div>
+                        <div class="menu__card-body">
+                            <h3>Alfajor de Maicena</h3>
+                            <p>Alfajor artesanal con dulce de leche y coco rallado. Estilo Mar del Plata.</p>
+                            <div class="menu__card-footer">
+                                <span class="menu__price">$ 1.500</span>
+                                <a href="https://wa.me/5491112345678?text=Quiero%20pedir%20Alfajor" class="btn btn--sm btn--outline-dark" target="_blank" rel="noopener noreferrer">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BEBIDAS -->
+                    <div class="menu__card reveal" data-category="bebidas">
+                        <div class="menu__card-img">
+                            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&q=80" alt="Malbec mendocino" loading="lazy">
+                            <span class="menu__badge">Recomendado</span>
+                        </div>
+                        <div class="menu__card-body">
+                            <h3>Malbec Mendoza</h3>
+                            <p>Botella varietal 2021, 750ml. Maridaje ideal para la parrilla.</p>
+                            <div class="menu__card-footer">
+                                <span class="menu__price">$ 8.500</span>
+                                <a href="https://wa.me/5491112345678?text=Quiero%20pedir%20Malbec" class="btn btn--sm btn--outline-dark" target="_blank" rel="noopener noreferrer">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__card reveal" data-category="bebidas">
+                        <div class="menu__card-img">
+                            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&q=80" alt="Fernet con cola" loading="lazy">
+                        </div>
+                        <div class="menu__card-body">
+                            <h3>Fernet con Cola</h3>
+                            <p>El clásico argentino. Fernet Branca 60cc con Coca-Cola, hielo y limón.</p>
+                            <div class="menu__card-footer">
+                                <span class="menu__price">$ 2.500</span>
+                                <a href="https://wa.me/5491112345678?text=Quiero%20pedir%20Fernet" class="btn btn--sm btn--outline-dark" target="_blank" rel="noopener noreferrer">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__card reveal" data-category="bebidas">
+                        <div class="menu__card-img">
+                            <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400&q=80" alt="Agua mineral" loading="lazy">
+                        </div>
+                        <div class="menu__card-body">
+                            <h3>Agua Mineral</h3>
+                            <p>Sin o con gas, 500ml. Frías o a temperatura ambiente.</p>
+                            <div class="menu__card-footer">
+                                <span class="menu__price">$ 800</span>
+                                <a href="https://wa.me/5491112345678?text=Quiero%20pedir%20Agua" class="btn btn--sm btn--outline-dark" target="_blank" rel="noopener noreferrer">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /menu__grid -->
+
+                <div class="menu__cta reveal">
+                    <p>¿Querés ver la carta completa?</p>
+                    <a href="#reservas" class="btn btn--primary">Consultá el Menú Completo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GALERÍA ===== -->
+        <section class="gallery" id="galeria">
+            <div class="container">
+                <div class="section__header reveal">
+                    <span class="section__tag">Momentos Especiales</span>
+                    <h2 class="section__title">Nuestra <em>Galería</em></h2>
+                </div>
+                <div class="gallery__grid reveal">
+
+                    <div class="gallery__item gallery__item--large"
+                         role="button" tabindex="0"
+                         aria-label="Ver imagen ampliada: Ambiente del restaurante">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
+                             alt="Ambiente del restaurante" loading="lazy">
+                        <div class="gallery__overlay" aria-hidden="true">
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
+                    </div>
+
+                    <div class="gallery__item"
+                         role="button" tabindex="0"
+                         aria-label="Ver imagen ampliada: Bife especial">
+                        <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=500&q=80"
+                             alt="Bife especial" loading="lazy">
+                        <div class="gallery__overlay" aria-hidden="true">
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
+                    </div>
+
+                    <div class="gallery__item"
+                         role="button" tabindex="0"
+                         aria-label="Ver imagen ampliada: Parrilla encendida">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&q=80"
+                             alt="Parrilla encendida" loading="lazy">
+                        <div class="gallery__overlay" aria-hidden="true">
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
+                    </div>
+
+                    <div class="gallery__item"
+                         role="button" tabindex="0"
+                         aria-label="Ver imagen ampliada: Selección de vinos">
+                        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&q=80"
+                             alt="Selección de vinos" loading="lazy">
+                        <div class="gallery__overlay" aria-hidden="true">
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
+                    </div>
+
+                    <div class="gallery__item"
+                         role="button" tabindex="0"
+                         aria-label="Ver imagen ampliada: Nuestros postres">
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=500&q=80"
+                             alt="Nuestros postres" loading="lazy">
+                        <div class="gallery__overlay" aria-hidden="true">
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
+                    </div>
+
+                    <div class="gallery__item"
+                         role="button" tabindex="0"
+                         aria-label="Ver imagen ampliada: Cocina en acción">
+                        <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=500&q=80"
+                             alt="Cocina en acción" loading="lazy">
+                        <div class="gallery__overlay" aria-hidden="true">
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada de imagen">
+            <button type="button" class="lightbox__close" id="lightbox-close" aria-label="Cerrar">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="lightbox__prev" id="lightbox-prev" aria-label="Imagen anterior">
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <img class="lightbox__img" id="lightbox-img" src="" alt="">
+            <button type="button" class="lightbox__next" id="lightbox-next" aria-label="Imagen siguiente">
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <!-- Separador tablero -->
+        <div class="tablero-divider" aria-hidden="true"></div>
+
+        <!-- ===== UBICACIÓN ===== -->
+        <section class="location" id="ubicacion">
+            <div class="container">
+                <div class="section__header reveal">
+                    <span class="section__tag">Cómo Llegarnos</span>
+                    <h2 class="section__title">Horarios & <em>Ubicación</em></h2>
+                </div>
+                <div class="location__grid">
+                    <div class="location__info reveal">
+                        <div class="location__block">
+                            <h3><i class="fas fa-clock" aria-hidden="true"></i> Horarios de Atención</h3>
+                            <ul class="location__hours">
+                                <li><span>Lunes a Viernes</span><span>12:00 – 00:00 hs</span></li>
+                                <li><span>Sábados</span><span>12:00 – 01:00 hs</span></li>
+                                <li><span>Domingos</span><span>12:00 – 23:00 hs</span></li>
+                            </ul>
+                            <!-- Aviso de temporada (se muestra via JS solo en enero) -->
+                            <div class="location__notice" id="seasonal-notice" hidden>
+                                <i class="fas fa-sun" aria-hidden="true"></i>
+                                <p><strong>Aviso de temporada:</strong> Durante enero cerramos los días lunes. De martes a domingo, a pleno servicio.</p>
+                            </div>
+                        </div>
+                        <div class="location__block">
+                            <h3><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Dirección</h3>
+                            <p>Av. Corrientes 1234, Piso 1<br>Buenos Aires, Argentina (C1043)</p>
+                        </div>
+                        <div class="location__block">
+                            <h3><i class="fas fa-phone-alt" aria-hidden="true"></i> Contacto</h3>
+                            <p>
+                                <a href="tel:+541112345678">+54 11 1234-5678</a><br>
+                                <a href="mailto:reservas@elfogonporteno.com.ar">reservas@elfogonporteno.com.ar</a>
+                            </p>
+                        </div>
+                        <div class="location__transport">
+                            <span class="transport__tag"><i class="fas fa-subway" aria-hidden="true"></i> Línea B – Florida</span>
+                            <span class="transport__tag"><i class="fas fa-bus" aria-hidden="true"></i> Colectivos 5, 12, 29</span>
+                            <span class="transport__tag"><i class="fas fa-parking" aria-hidden="true"></i> Playa a 50m</span>
+                        </div>
+                    </div>
+                    <div class="location__map reveal">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.016885143515!2d-58.38375368477059!3d-34.60373358045942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaca96a2bfb1%3A0x2a8f39e8e6e6e6e6!2sAv.%20Corrientes%2C%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1693000000000"
+                            width="100%" height="420" allowfullscreen=""
+                            loading="lazy"
+                            title="Mapa de El Fogón Porteño — Av. Corrientes 1234, Buenos Aires">
+                            <p>Para ver el mapa, visitá
+                               <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">Google Maps</a>.
+                            </p>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIOS ===== -->
+        <section class="testimonials" id="testimonios">
+            <div class="container">
+                <div class="section__header reveal">
+                    <span class="section__tag">Lo que dicen nuestros clientes</span>
+                    <h2 class="section__title">Testimonios <em>reales</em></h2>
+                    <div class="testimonials__rating">
+                        <div class="testimonials__rating-stars" aria-label="4.9 de 5 estrellas">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <span class="testimonials__rating-score">4.9 / 5</span>
+                        <span class="testimonials__rating-count">· Más de 4.800 comensales felices</span>
+                    </div>
+                </div>
+
+                <div class="testimonials__grid reveal">
+
+                    <div class="testimonial__card">
+                        <div class="testimonial__quote-icon">
+                            <i class="fas fa-quote-left" aria-hidden="true"></i>
+                        </div>
+                        <div class="testimonial__stars" aria-label="5 estrellas">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <p class="testimonial__text">"El mejor bife de chorizo que probé en Buenos Aires. La carne era increíblemente tierna y el punto de cocción, perfecto. El ambiente es cálido y el servicio, impecable. Ya reservé para volver el próximo fin de semana."</p>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author-avatar" aria-hidden="true">MG</div>
+                            <div>
+                                <strong>María González</strong>
+                                <span>Buenos Aires, Argentina</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial__card">
+                        <div class="testimonial__quote-icon">
+                            <i class="fas fa-quote-left" aria-hidden="true"></i>
+                        </div>
+                        <div class="testimonial__stars" aria-label="5 estrellas">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <p class="testimonial__text">"Vine con mi familia a celebrar un cumpleaños y quedamos encantados. Las empanadas de entrada, espectaculares. El asado de tira se derretía en la boca. El flan casero para cerrar... ¡de 10! Totalmente recomendado."</p>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author-avatar" aria-hidden="true">CM</div>
+                            <div>
+                                <strong>Carlos Martínez</strong>
+                                <span>Córdoba, Argentina</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial__card">
+                        <div class="testimonial__quote-icon">
+                            <i class="fas fa-quote-left" aria-hidden="true"></i>
+                        </div>
+                        <div class="testimonial__stars" aria-label="4 estrellas y media">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                        </div>
+                        <p class="testimonial__text">"Como turista brasileño quería probar la auténtica parrilla argentina y este lugar superó todas mis expectativas. La selección de vinos Malbec es excelente y los mozos muy atentos. ¡Volveré seguro!"</p>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author-avatar" aria-hidden="true">JS</div>
+                            <div>
+                                <strong>João Silva</strong>
+                                <span>São Paulo, Brasil</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial__card">
+                        <div class="testimonial__quote-icon">
+                            <i class="fas fa-quote-left" aria-hidden="true"></i>
+                        </div>
+                        <div class="testimonial__stars" aria-label="5 estrellas">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <p class="testimonial__text">"Los ñoquis del 29 son una tradición que mantienen con mucho cariño. El ambiente es auténtico porteño, con música de fondo y un servicio que te hace sentir como en casa. Uno de los mejores restaurantes de la zona."</p>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author-avatar" aria-hidden="true">AR</div>
+                            <div>
+                                <strong>Ana Rodríguez</strong>
+                                <span>Mendoza, Argentina</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== RESERVAS / CONTACTO ===== -->
+        <section class="contact" id="reservas">
+            <div class="container">
+                <div class="section__header reveal">
+                    <span class="section__tag">Hacé tu Reserva</span>
+                    <h2 class="section__title">¿Listo para <em>visitarnos?</em></h2>
+                    <p class="section__subtitle">Reservá tu mesa con anticipación y garantizá tu lugar</p>
+                </div>
+                <div class="contact__grid">
+
+                    <!-- FORMULARIO -->
+                    <!-- Para enviar emails reales: cambiar action="#" por action="https://formspree.io/f/TU_ID" -->
+                    <div class="contact__form-wrapper reveal">
+                        <form class="contact__form" id="reservation-form" action="#" method="POST" novalidate>
+                            <div class="form__row">
+                                <div class="form__group">
+                                    <label for="name" class="form__label">Nombre completo *</label>
+                                    <input type="text" id="name" name="name" class="form__input"
+                                           placeholder="Tu nombre" required autocomplete="name">
+                                    <span class="form__error" id="name-error"></span>
+                                </div>
+                                <div class="form__group">
+                                    <label for="email" class="form__label">Email *</label>
+                                    <input type="email" id="email" name="email" class="form__input"
+                                           placeholder="tu@email.com" required autocomplete="email">
+                                    <span class="form__error" id="email-error"></span>
+                                </div>
+                            </div>
+                            <div class="form__row">
+                                <div class="form__group">
+                                    <label for="phone" class="form__label">Teléfono *</label>
+                                    <input type="tel" id="phone" name="phone" class="form__input"
+                                           placeholder="+54 11 1234-5678" required autocomplete="tel">
+                                    <span class="form__error" id="phone-error"></span>
+                                </div>
+                                <div class="form__group">
+                                    <label for="guests" class="form__label">Número de personas *</label>
+                                    <select id="guests" name="guests" class="form__input form__select" required>
+                                        <option value="">Seleccioná...</option>
+                                        <option value="1">1 persona</option>
+                                        <option value="2">2 personas</option>
+                                        <option value="3">3 personas</option>
+                                        <option value="4">4 personas</option>
+                                        <option value="5">5 personas</option>
+                                        <option value="6">6 personas</option>
+                                        <option value="7+">7 o más personas</option>
+                                    </select>
+                                    <span class="form__error" id="guests-error"></span>
+                                </div>
+                            </div>
+                            <div class="form__row">
+                                <div class="form__group">
+                                    <label for="date" class="form__label">Fecha *</label>
+                                    <input type="date" id="date" name="date" class="form__input" required>
+                                    <small class="form__help">A partir de mañana (DD/MM/AAAA según tu dispositivo)</small>
+                                    <span class="form__error" id="date-error"></span>
+                                </div>
+                                <div class="form__group">
+                                    <label for="time" class="form__label">Horario *</label>
+                                    <select id="time" name="time" class="form__input form__select" required>
+                                        <option value="">Seleccioná...</option>
+                                        <option value="12:00">12:00 hs</option>
+                                        <option value="12:30">12:30 hs</option>
+                                        <option value="13:00">13:00 hs</option>
+                                        <option value="13:30">13:30 hs</option>
+                                        <option value="20:00">20:00 hs</option>
+                                        <option value="20:30">20:30 hs</option>
+                                        <option value="21:00">21:00 hs</option>
+                                        <option value="21:30">21:30 hs</option>
+                                        <option value="22:00">22:00 hs</option>
+                                    </select>
+                                    <span class="form__error" id="time-error"></span>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label for="message" class="form__label">Comentarios o pedidos especiales</label>
+                                <textarea id="message" name="message" class="form__input form__textarea"
+                                    placeholder="¿Algún pedido especial? (cumpleaños, alergias, menú vegetariano, etc.)"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full" id="submit-btn">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i> Confirmar Reserva
+                            </button>
+                        </form>
+
+                        <!-- Mensaje de éxito FUERA del form para que se vea correctamente -->
+                        <div class="form__success" id="form-success" hidden>
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <strong>Reserva recibida!</strong>
+                            <p>Nos comunicaremos con vos a la brevedad para confirmar tu mesa.</p>
+                            <button type="button" class="btn btn--outline-dark" id="form-reset-btn">
+                                <i class="fas fa-redo" aria-hidden="true"></i> Hacé otra reserva
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- INFO DE CONTACTO -->
+                    <div class="contact__info reveal">
+                        <div class="contact__card">
+                            <div class="contact__card-icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+                            <h3>Reserva por WhatsApp</h3>
+                            <p>¿Preferís coordinar directamente? Escribinos y te respondemos en minutos.</p>
+                            <a href="https://wa.me/5491112345678?text=Hola!%20Quiero%20hacer%20una%20reserva"
+                               class="btn btn--whatsapp" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Escribinos al WhatsApp
+                            </a>
+                        </div>
+                        <div class="contact__card">
+                            <div class="contact__card-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
+                            <h3>Llamanos</h3>
+                            <p>Atendemos durante el horario del restaurante.</p>
+                            <a href="tel:+541112345678" class="btn btn--outline-dark">
+                                <i class="fas fa-phone-alt" aria-hidden="true"></i> +54 11 1234-5678
+                            </a>
+                        </div>
+                        <div class="contact__card contact__card--note">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i>
+                            <p>Las reservas se confirman con <strong>24 horas de anticipación</strong>. Para grupos de 8 o más personas, contactanos directamente.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer__main container">
+            <div class="footer__brand">
+                <a href="#inicio" class="footer__logo">
+                    <i class="fas fa-fire" aria-hidden="true"></i>
+                    <span>El Fogón <em>Porteño</em></span>
+                </a>
+                <p>Auténtica cocina argentina<br>desde 1985</p>
+                <div class="footer__social">
+                    <a href="#" class="social__link" aria-label="Instagram">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social__link" aria-label="Facebook">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://wa.me/5491112345678" class="social__link"
+                       aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#testimonios">Reseñas</a></li>
+                    <li><a href="#reservas">Reservas</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Contacto</h4>
+                <ul class="footer__contact-list">
+                    <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Av. Corrientes 1234, CABA</li>
+                    <li><i class="fas fa-phone-alt" aria-hidden="true"></i> <a href="tel:+541112345678">+54 11 1234-5678</a></li>
+                    <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:reservas@elfogonporteno.com.ar">reservas@elfogonporteno.com.ar</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Horarios</h4>
+                <ul class="footer__hours-list">
+                    <li><span>Lun – Vie</span><span>12:00 – 00:00</span></li>
+                    <li><span>Sábados</span><span>12:00 – 01:00</span></li>
+                    <li><span>Domingos</span><span>12:00 – 23:00</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom container">
+            <p>&copy; <span id="current-year"></span> El Fogón Porteño. Todos los derechos reservados.</p>
+            <p>Desarrollado en Buenos Aires</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
