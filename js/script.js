@@ -139,93 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (firstTab) filterMenu(firstTab.dataset.category);
 
 
-  /* ─── 8. SLIDER DE TESTIMONIOS ─────────────────────────── */
-  const track    = document.getElementById('testimonials-track');
-  const dotsWrap = document.getElementById('testimonials-dots');
-  const prevBtn  = document.getElementById('prev-btn');
-  const nextBtn  = document.getElementById('next-btn');
-
-  if (track && dotsWrap) {
-    const cards   = track.querySelectorAll('.testimonial__card');
-    const total   = cards.length;
-    let current   = 0;
-    let autoTimer = null;
-    let isAnimating = false;
-
-    // Crear dots
-    cards.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.type = 'button';
-      dot.className = 'testimonials__dot' + (i === 0 ? ' active' : '');
-      dot.setAttribute('aria-label', `Testimonio ${i + 1}`);
-      dot.addEventListener('click', () => goTo(i));
-      dotsWrap.appendChild(dot);
-    });
-
-    function updateDots() {
-      dotsWrap.querySelectorAll('.testimonials__dot').forEach((d, i) =>
-        d.classList.toggle('active', i === current)
-      );
-    }
-
-    function goTo(index) {
-      if (isAnimating) return;
-      isAnimating = true;
-
-      // Fade out
-      track.classList.add('fading');
-
-      setTimeout(() => {
-        current = (index + total) % total;
-        // Desplazamiento instantáneo mientras está invisible
-        track.style.transition = 'none';
-        track.style.transform = `translateX(-${current * 100}%)`;
-
-        // Pequeño frame para aplicar el cambio antes de restaurar la transición
-        requestAnimationFrame(() => {
-          track.style.transition = '';
-          track.classList.remove('fading');
-          updateDots();
-
-          setTimeout(() => { isAnimating = false; }, 300);
-        });
-      }, 240);
-    }
-
-    function next() { goTo(current + 1); }
-    function prev() { goTo(current - 1); }
-
-    prevBtn.addEventListener('click', prev);
-    nextBtn.addEventListener('click', next);
-
-    // Swipe táctil
-    let touchStartX = 0;
-    track.addEventListener('touchstart', e => {
-      touchStartX = e.changedTouches[0].clientX;
-    }, { passive: true });
-    track.addEventListener('touchend', e => {
-      const diff = touchStartX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
-      startAuto(); // reanudar auto-play después del swipe
-    }, { passive: true });
-
-    // Auto-play
-    function startAuto() {
-      clearInterval(autoTimer);
-      autoTimer = setInterval(next, 5000);
-    }
-    function stopAuto() { clearInterval(autoTimer); }
-
-    startAuto();
-
-    const wrapper = document.querySelector('.testimonials__wrapper');
-    if (wrapper) {
-      wrapper.addEventListener('mouseenter', stopAuto);
-      wrapper.addEventListener('mouseleave', startAuto);
-      wrapper.addEventListener('touchstart', stopAuto, { passive: true });
-    }
-  }
-
 
   /* ─── 9. SCROLL REVEAL (IntersectionObserver) ───────────── */
   const revealEls = document.querySelectorAll('.reveal, .reveal-left');
@@ -468,9 +381,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  /* ─── 14. TOOLTIP DE WHATSAPP (cada 8 segundos) ─────────── */
+  /* ─── 14. TOOLTIP DE WHATSAPP (solo desktop) ─────────── */
   const waBtn = document.querySelector('.whatsapp-btn');
-  if (waBtn) {
+  if (waBtn && window.innerWidth >= 768) {
     function showWaTooltip() {
       waBtn.classList.add('show-tooltip');
       setTimeout(() => waBtn.classList.remove('show-tooltip'), 3200);
@@ -484,11 +397,40 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  /* ─── 15. AVISO DE TEMPORADA (enero) ────────────────────── */
+  /* ─── 15. HORARIOS: DÍA ACTUAL + ESTADO ABIERTO/CERRADO + AVISO TEMPORADA ── */
+
+  // Aviso de temporada — visible en el HTML por defecto (más robusto);
+  // JS lo oculta si NO es enero. Así funciona aunque el script tarde o falle.
   const seasonalNotice = document.getElementById('seasonal-notice');
-  if (seasonalNotice && new Date().getMonth() === 0) {
-    // getMonth() retorna 0 para enero
-    seasonalNotice.removeAttribute('hidden');
+  if (seasonalNotice && new Date().getMonth() !== 0) {
+    seasonalNotice.hidden = true;
   }
 
-}); // fin DOMContentLoaded
+  // Highlight del día actual en la tabla de horarios
+  const hoursItems = document.querySelectorAll('.location__hours li[data-days]');
+  const todayDay   = new Date().getDay(); // 0=Dom, 1=Lun … 6=Sáb
+
+  hoursItems.forEach(li => {
+    const days = li.dataset.days.split(',').map(Number);
+    if (days.includes(todayDay)) li.classList.add('today');
+  });
+
+  // Badge Abierto / Cerrado
+  const statusBadge = document.getElementById('location-status');
+  if (statusBadge) {
+    const now2 = new Date();
+    const day2 = now2.getDay();
+    const t2   = now2.getHours() * 60 + now2.getMinutes();
+    const noon = 12 * 60;
+
+    let open = false;
+    if      (day2 === 0 && t2 < 60)       open = true;                         // Dom madrugada: sábado extendido hasta la 1am
+    else if (day2 === 0)                   open = t2 >= noon && t2 < 23 * 60;  // Dom: 12:00–23:00
+    else if (day2 >= 1 && day2 <= 5)       open = t2 >= noon;                  // Lun–Vie: 12:00–00:00 (tras medianoche ya es el día siguiente)
+    else if (day2 === 6)                   open = t2 >= noon;                  // Sáb: 12:00–01:00 (la 1am del dom la cubre el primer caso)
+
+    statusBadge.textContent = open ? 'Abierto ahora' : 'Cerrado ahora';
+    statusBadge.className   = `location__status location__status--${open ? 'open' : 'closed'} is-ready`;
+  }
+
+});
